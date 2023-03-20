@@ -1,8 +1,6 @@
 <script>
-// Contains the user register, login and role choice functions and templates
 import { login, register } from "../service/user";
 import { ElMessage } from 'element-plus'
-
 export default {
   data() {
     return {
@@ -56,6 +54,9 @@ export default {
 </script>
 
 <template>
+  <header>
+    <span class="title">ErgoSmart</span>
+  </header>
   <div class="wrapper">
     <form class="login" v-on:submit="handleSubmit">
       <p v-if="isRegister" class="title">Sign up</p>
@@ -88,7 +89,16 @@ export default {
 * {
   box-sizing: border-box;
 }
-
+header {
+  width: 100%;
+  height: 70px;
+  background-color: #343a40;
+  box-sizing: border-box;
+  padding: 0 56px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 .wrapper {
   display: flex;
   align-items: center;
@@ -192,5 +202,10 @@ export default {
 
 .login:not(.loading) button:focus {
   border-bottom-width: 4px;
+}
+
+.title {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 25px;
 }
 </style>
